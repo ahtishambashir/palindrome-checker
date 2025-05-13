@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BeastScan Voting Widget</title>
+    <link rel="stylesheet" href="./assets/css/main.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>BeastScan Ideas Voting</h1>
+      <div class="widget-actions">
+        <div class="sort-actions">
+          <button class="sort-btn" data-sort="upvotes">Sort by Upvotes</button>
+          <button class="sort-btn" data-sort="downvotes">
+            Sort by Downvotes
+          </button>
+        </div>
+        <div class="sort-actions">
+          <button class="reset-btn">Reset All</button>
+          <button class="add-idea-btn">Add New Idea</button>
+        </div>
+      </div>
+
+      <div id="content">
+        <!-- Loading state will be shown initially -->
+        <div class="loading">
+          <div class="loading-spinner"></div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal for editing cards -->
+    <div class="modal-backdrop" id="editModal">
+      <div class="modal">
+        <div class="modal-header">
+          <h2 class="modal-title">Edit Idea</h2>
+          <button class="close-btn" id="closeModal">&times;</button>
+        </div>
+        <form id="editForm">
+          <input type="hidden" id="ideaId" />
+          <div class="form-group">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" id="title" class="form-input" required />
+          </div>
+          <div class="form-group">
+            <label for="description" class="form-label">Description</label>
+            <textarea
+              id="description"
+              class="form-textarea"
+              required
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <label for="imageUrl" class="form-label">Image URL</label>
+            <input type="text" id="imageUrl" class="form-input" required />
+          </div>
+          <div class="form-group">
+            <label for="buttonLabel" class="form-label">Button Label</label>
+            <input type="text" id="buttonLabel" class="form-input" required />
+          </div>
+          <div class="form-group">
+            <label for="buttonLink" class="form-label">Button Link</label>
+            <input type="text" id="buttonLink" class="form-input" required />
+          </div>
+          <button type="submit" class="save-btn">Save Changes</button>
+        </form>
+      </div>
+    </div>
+    <!-- Add New Idea Modal -->
+    <div class="modal-backdrop" id="addIdeaModal">
+      <div class="modal">
+        <div class="modal-header">
+          <h2 class="modal-title">Add New Idea</h2>
+          <button class="close-btn" id="closeAddModal">&times;</button>
+        </div>
+        <form id="addIdeaForm">
+          <div class="form-group">
+            <label for="newTitle" class="form-label">Title</label>
+            <input type="text" id="newTitle" class="form-input" required />
+          </div>
+          <div class="form-group">
+            <label for="newDescription" class="form-label">Description</label>
+            <textarea
+              id="newDescription"
+              class="form-textarea"
+              required
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <label for="newImageUrl" class="form-label">Image URL</label>
+            <input type="text" id="newImageUrl" class="form-input" required />
+          </div>
+          <div class="form-group">
+            <label for="newButtonLabel" class="form-label">Button Label</label>
+            <input
+              type="text"
+              id="newButtonLabel"
+              class="form-input"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="newButtonLink" class="form-label">Button Link</label>
+            <input type="text" id="newButtonLink" class="form-input" required />
+          </div>
+          <button type="submit" class="save-btn">Add Idea</button>
+        </form>
+      </div>
+    </div>
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>
